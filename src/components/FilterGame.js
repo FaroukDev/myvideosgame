@@ -4,12 +4,27 @@ import GameTable from './GameTable';
 
 
 export default class FilterGame extends Component {
+    constructor(props) {
+        super(props); 
+        console.log("les jeux", props.jeux);
+        this.state = {
+            filterText : "",
+            inStockOnly: false
+        }
+        
+    }
     render() {
         return (
-           <div style={{"backgroundColor": "blue"}}>
+           <div >
             FilterGame
-            <SearchCompo/>
-            <GameTable/>
+            <SearchCompo 
+            filterText={this.state.filterText} 
+            inStockOnly={this.state.inStockOnly}
+            />
+            <GameTable jeux={this.props.jeux}
+             filterText={this.state.filterText} 
+            inStockOnly={this.state.inStockOnly}
+            />
            </div>
         )
     }
