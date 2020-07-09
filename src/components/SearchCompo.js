@@ -6,16 +6,17 @@ class SearchCompo extends Component {
     console.log("filtertext", this.props.filterText);
     console.log("hello", this.props.inStockOnly);
 
-    this.state = {};
   }
-  ///JE ME SUIS ARRETE A 9 MIN DE LA VIDEO
+  ///JE ME SUIS ARRETE A 16.19 MIN DE LA VIDEO
 
-  handleFilterText = (e) => {
-    console.log(e.target.value);
+  handleFilterTextChange = (e) => {
+    //console.log(e.target.value);
+    this.props.handleFilterTextChange(e.target.value);
   };
 
   handleInStockChange = (e) => {
-    console.log(e.target.checked);
+    //console.log(e.target.checked);
+    this.props.handleInStockChange(e.target.checked);
   };
 
   render() {
@@ -24,10 +25,15 @@ class SearchCompo extends Component {
         <input
           type="text"
           placeholder="search"
-          onChange={this.handleFilterText}
+          text={this.props.filterText}
+          onChange={this.handleFilterTextChange}
         />
-        <input type="checkbox" onChange={this.handleInStockChange} /> Produit en
-        stock seulement
+        <input
+          type="checkbox"
+          checked={this.props.inStockOnly}
+          onChange={this.handleInStockChange}
+        />
+        Produit en stock seulement
       </div>
     );
   }

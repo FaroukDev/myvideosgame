@@ -10,10 +10,18 @@ class GameTable extends Component {
     }
 
     render() {
+        const filterText = this.props.filterText;
+        const inStockOnly = this.props.inStockOnly;
 
         const rows = [];
         this.props.jeux.forEach(jeu => {
-            console.log("voila",jeu.name);
+            console.log("jeu", jeu.name);
+            if(jeu.name.indexOf(filterText) === -1 ) {
+                return;
+            }
+            if(inStockOnly && !jeu.stocked) {
+                return;
+            }
             rows.push(<GameRow key={jeu.name} jeu={jeu}/>)
             
         });
