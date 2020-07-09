@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Input from '@material-ui/core/Input';
+import Checkbox from '@material-ui/core/Checkbox';
 
 class SearchCompo extends Component {
   constructor(props) {
@@ -22,16 +24,21 @@ class SearchCompo extends Component {
   render() {
     return (
       <div>
-        <input
+        <Input
           type="text"
           placeholder="search"
           text={this.props.filterText}
           onChange={this.handleFilterTextChange}
+          style={{"color": "white"}}
+          
         />
-        <input
-          type="checkbox"
+        <Checkbox
+          type="Checkbox"
           checked={this.props.inStockOnly}
           onChange={this.handleInStockChange}
+          defaultChecked
+          color="default"
+          inputProps={{ 'aria-label': 'checkbox with default color' }}
         />
         Produit en stock seulement
       </div>

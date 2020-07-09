@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+//import img1 from "./images/counter.jpg"
 import "./App.css";
 import FilterGame from './components/FilterGame.js';
+import Toolbar from '@material-ui/core/Toolbar';
+import AppBar from '@material-ui/core/AppBar';
 
 class App extends Component {
   constructor(props) {
@@ -21,10 +24,20 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          
-          <FilterGame jeux={GAME}/>
-        </header>
+      
+      <AppBar
+      position="sticky">
+       <Toolbar
+        style={{"font-size": "25px"}}
+        className="title_app"
+        position="sticky"
+        >My Video games
+        </Toolbar>
+      </AppBar>
+      
+        <div className="App-header">
+          <FilterGame jeux={GAME} />
+        </div>
       </div>
     );
   }

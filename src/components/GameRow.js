@@ -11,7 +11,7 @@ class GameRow extends Component {
         if( this.props.jeu.stocked) {
                 name = this.props.jeu.name;
         } else {
-                name = <span style={{"color" : "red" }}>{this.props.jeu.name}</span>
+                name = <span style={{"color" : "salmon" }}>{this.props.jeu.name}</span>
         }
         return (
             <tr>

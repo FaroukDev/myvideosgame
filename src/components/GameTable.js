@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GameCategory from './GameCategory';
 import GameRow from './GameRow';
+import Grid from '@material-ui/core/Box';
 
 class GameTable extends Component {
     constructor(props) {
@@ -42,8 +43,15 @@ class GameTable extends Component {
                         <th>Price</th>
                         </tr>
                     </thead>
-                    <GameCategory category={"FPS"}/>
+                    {/* <GameCategory category={"FPS"} /> */}
+                    <Grid container
+                    direction="row"
+                    justify="center"
+                    alignItems="center">
                     {rows}
+                    </Grid>
+                    
+                    
                 </table> 
             </div>
         );
