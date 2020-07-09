@@ -9,7 +9,7 @@ class SearchCompo extends Component {
     console.log("hello", this.props.inStockOnly);
 
   }
-  ///JE ME SUIS ARRETE A 16.19 MIN DE LA VIDEO
+
 
   handleFilterTextChange = (e) => {
     //console.log(e.target.value);

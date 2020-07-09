@@ -13,18 +13,18 @@ export default class FilterGame extends Component {
   }
 
   handleFilterTextChange = (e) => {
-    console.log("parent",e);
-    this.setState({filterText: e})
+    console.log("parent", e);
+    this.setState({ filterText: e });
   };
 
   handleInStockChange = (e) => {
-    console.log("parent",e);
-    this.setState({inStockOnly: e})
+    console.log("parent", e);
+    this.setState({ inStockOnly: e });
   };
 
   render() {
     return (
-      <div>
+      <>
         <SearchCompo
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
@@ -36,7 +36,7 @@ export default class FilterGame extends Component {
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
         />
-      </div>
+      </>
     );
   }
 }
