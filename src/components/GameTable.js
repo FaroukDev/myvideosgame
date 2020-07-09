@@ -7,6 +7,7 @@ class GameTable extends Component {
         super(props); 
         console.log("les jeux les jeux", props.jeux);
         
+        
     }
 
     render() {
@@ -17,7 +18,7 @@ class GameTable extends Component {
         const rows = [];
         this.props.jeux.forEach(jeu => {
             //console.log("jeu", jeu.name);
-            if(jeu.name.indexOf(filterText) === -1 ) {
+            if(jeu.name.toLowerCase().indexOf(filterText) === -1 ) {
                 return;
             }
             if(inStockOnly && !jeu.stocked) {
